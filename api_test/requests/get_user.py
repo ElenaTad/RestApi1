@@ -1,4 +1,5 @@
 import requests
+import json
 
 def test_status_code_200():
 
@@ -13,9 +14,9 @@ def  test_response_content_type_equals_json():
 
 def test_users_info():
 
-    response = requests.get('https://gorest.co.in/public-api/users/3756')
+    response = requests.get('https://gorest.co.in/public-api/users/13')
     response_body = response.json()
-    assert response_body["data"]["name"] =="Balamani Kaur"
+    assert response_body["code"] == 200
 
 def tests_number_items_in_Data():
 

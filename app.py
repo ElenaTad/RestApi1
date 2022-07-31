@@ -5,6 +5,7 @@ Base_URL = 'https://gorest.co.in/'
 
 
 response = requests.get(f"{Base_URL}//public-api/users")
-print(response.json())
+response_body=response.json()
+print(response_body["code"])
+print(response.url)
 
-print(response.status_code)
