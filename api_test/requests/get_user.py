@@ -1,10 +1,13 @@
 import requests
 import json
 
-def test_status_code_200():
+Base_URL = "https://gorest.co.in/"
 
-  response = requests.get('https://gorest.co.in/public-api/users')
+def get_all_users():
+
+  response = requests.get(f'{Base_URL}/public-api/users')
   assert response.status_code == 200
+
 
 
 def  test_response_content_type_equals_json():
@@ -23,6 +26,63 @@ def tests_number_items_in_Data():
     response = requests.get('https://gorest.co.in/public-api/users/')
     response_body = response.json()
     assert len(response_body["data"]) == 10
+
+
+def test_status_code_404():
+    response = requests.get("https://gorest.co.in/public-api/users/111111111")
+    response_body = response.json()
+    assert response_body["code"]==404
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

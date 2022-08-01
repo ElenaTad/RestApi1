@@ -14,7 +14,9 @@ def test_create_user_status_code_201():
    print(response_body)
 
 
-def test_new_users_name():
-    response=requests.get("https://gorest.co.in/public-api/users")
-    response_body =response.json
-    assert len(response_body["data"]) == 4
+def test_status_code_401():
+    response = requests.post("https://gorest.co.in/public-api/users", data=json.loads(mydata))
+    response_body = response.json()
+    assert response_body["code"] == 401
+    print(response_body)
+

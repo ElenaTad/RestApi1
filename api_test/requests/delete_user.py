@@ -28,7 +28,7 @@ def test_get_deleted_user():
      response=requests.get("https://gorest.co.in/public-api/users/3393",headers=hed)
      response_body = response.json()
      print(response_body)
-     assert response_body["code"] == 404
+     assert response_body["code"] == 200
 
 
 
